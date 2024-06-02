@@ -1,7 +1,6 @@
 // chatService.js
 import axios from 'axios';
-
-const API_BASE_URL = 'http://localhost:8004/api/chat';
+import { API_BASE_URL } from '../service/config'; 
 
 export const startChatSession = async () => {
     try {

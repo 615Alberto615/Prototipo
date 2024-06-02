@@ -1,9 +1,7 @@
 // service/docenteService.js
 import axios from 'axios';
+import { API_BASE_URL } from '../service/config'; 
 
-// Base URLs
-const API_DOCENTES_BASE_URL = 'http://localhost:8004/api/v1/user/peopleByRole';
-const API_QUOTES_BASE_URL = 'http://localhost:8004/api/v1/quote/by-therapist';
 
 // Modifica la función para tomar roleId como parámetro
 export const fetchAllDocentes = async (roleId) => {
@@ -14,7 +12,7 @@ export const fetchAllDocentes = async (roleId) => {
       throw new Error('Role ID or token is missing from localStorage.');
     }
 
-    const response = await axios.get(`${API_DOCENTES_BASE_URL}/${roleId}`, {
+    const response = await axios.get(`${API_BASE_URL}/user/peopleByRole/${roleId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -41,7 +39,7 @@ export const fetchAppointmentsByTherapist = async () => {
       throw new Error('Therapist ID or token is missing from localStorage.');
     }
 
-    const response = await axios.get(`${API_QUOTES_BASE_URL}/${therapistId}`, {
+    const response = await axios.get(`${API_BASE_URL}/quote/by-therapist/${therapistId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
