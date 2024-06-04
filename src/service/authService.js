@@ -1,10 +1,10 @@
 // authService.js
 import axios from 'axios';
+import { API_BASE_URL } from '../service/config';
 
-const API_URL = 'http://localhost:8004/api/v1/auth'; 
 export const registerUser = async (userData) => {
   try {
-    const response = await axios.post(`${API_URL}/register`, userData);
+    const response = await axios.post(`${API_BASE_URL}/auth/register`, userData);
     return response.data;
   } catch (error) {
     throw error.response.data;
@@ -14,7 +14,7 @@ export const registerUser = async (userData) => {
 
 export const loginUser = async (userData) => {
   try {
-    const response = await axios.post(`${API_URL}/login`, userData);
+    const response = await axios.post(`${API_BASE_URL}/auth/login`, userData);
     const { data } = response.data;
 
     if (data && data.token && data.id) {
@@ -35,7 +35,7 @@ export const loginUser = async (userData) => {
 
 export const forgotPassword = async (email) => {
   try {
-    const response = await axios.post(`${API_URL}/forgot-password?email=${encodeURIComponent(email)}`);
+    const response = await axios.post(`${API_BASE_URL}/auth/forgot-password?email=${encodeURIComponent(email)}`);
     return response.data;
   } catch (error) {
     throw error.response.data;
@@ -44,7 +44,7 @@ export const forgotPassword = async (email) => {
 
 export const resetPassword = async (token, newPassword) => {
   try {
-    const response = await axios.post(`${API_URL}/reset-password`, {
+    const response = await axios.post(`${API_BASE_URL}/auth/reset-password`, {
       token,
       newPassword
     });

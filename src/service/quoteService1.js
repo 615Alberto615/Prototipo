@@ -1,11 +1,11 @@
 // services/quoteService.js
 import axios from 'axios';
+import { API_BASE_URL } from '../service/config'; 
 
-const API_URL = 'http://localhost:8004/api/v1/quote';
 
 export const getAllQuotes = async (token) => {
     try {
-        const response = await axios.get(`${API_URL}/all`, {
+        const response = await axios.get(`${API_BASE_URL}/quote/all`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },
@@ -18,7 +18,7 @@ export const getAllQuotes = async (token) => {
 
 export const getQuoteById = async (quotesId, token) => {
     try {
-        const response = await axios.get(`${API_URL}/user/${quotesId}`, {
+        const response = await axios.get(`${API_BASE_URL}/quote/user/${quotesId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },
@@ -30,7 +30,7 @@ export const getQuoteById = async (quotesId, token) => {
 };
 export const deleteQuoteById = async (quotesId, token) => {
     try {
-        const response = await axios.delete(`${API_URL}/${quotesId}`, {
+        const response = await axios.delete(`${API_BASE_URL}/quote/${quotesId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },
@@ -43,7 +43,7 @@ export const deleteQuoteById = async (quotesId, token) => {
 export const isAvailable = async (data, token) => {
     console.log('Sending request to check availability with data:', data); // Log del body de la solicitud
     try {
-        const response = await axios.post(`${API_URL}/is-available`, data, {
+        const response = await axios.post(`${API_BASE_URL}/quote/is-available`, data, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },
@@ -58,7 +58,7 @@ export const isAvailable = async (data, token) => {
 
 export const addQuote = async (data, token) => {
     try {
-        const response = await axios.post(`${API_URL}/create`, data, {
+        const response = await axios.post(`${API_BASE_URL}/quote/create`, data, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },
@@ -71,7 +71,7 @@ export const addQuote = async (data, token) => {
 };
 export const getUserQuotesToday = async (userId, token) => {
     try {
-        const response = await axios.get(`${API_URL}/user/${userId}/today`, {
+        const response = await axios.get(`${API_BASE_URL}/quote/user/${userId}/today`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },

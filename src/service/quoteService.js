@@ -1,10 +1,10 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../service/config'; 
 
-const API_BASE_URL = 'http://localhost:8004/api/v1/quote';
 
 export const createQuote = async (quoteData, token) => {
     try {
-        const response = await axios.post(`${API_BASE_URL}/create`, quoteData, {
+        const response = await axios.post(`${API_BASE_URL}/quote/create`, quoteData, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;
@@ -16,7 +16,7 @@ export const createQuote = async (quoteData, token) => {
 
 export const fetchQuotesByTherapist = async (therapistId, token) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/by-therapist/${therapistId}`, {
+        const response = await axios.get(`${API_BASE_URL}/quote/by-therapist/${therapistId}`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;
@@ -30,7 +30,7 @@ export const fetchQuotesByTherapist = async (therapistId, token) => {
 // Conseguir el historial clínico del terapeuta con estado false
 export const fetchHistorialByTherapist = async (therapistId, token) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/therapist/historial/${therapistId}`, {
+        const response = await axios.get(`${API_BASE_URL}/quote/therapist/historial/${therapistId}`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;

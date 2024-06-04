@@ -1,10 +1,10 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../service/config'; 
 
-const API_URL = 'http://localhost:8004/api/v1/availability';
 
 export const getAllAvailabilities = async (token) => {
     try {
-        const response = await axios.get(`${API_URL}/grouped-by-user`, {
+        const response = await axios.get(`${API_BASE_URL}/availability/grouped-by-user`, {
             headers: {
                 'Authorization': `Bearer ${token}`,  // Asegúrate de incluir 'Bearer ' antes del token
             },
@@ -16,7 +16,7 @@ export const getAllAvailabilities = async (token) => {
 };
 export const createAvailability = async (availabilityData, token) => {
     try {
-        const response = await axios.post(`${API_URL}/create`, availabilityData, {
+        const response = await axios.post(`${API_BASE_URL}/availability/create`, availabilityData, {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export const createAvailability = async (availabilityData, token) => {
 
 export const updateAvailability = async (availabilityId, updatedAvailability, token) => {
     try {
-        const response = await axios.put(`${API_URL}/update/${availabilityId}`, updatedAvailability, {
+        const response = await axios.put(`${API_BASE_URL}/availability/update/${availabilityId}`, updatedAvailability, {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json' // Asegurar el tipo de contenido
@@ -44,7 +44,7 @@ export const updateAvailability = async (availabilityId, updatedAvailability, to
 
 export const updateAvailabilityStatus = async (availabilityId, newStatus, token) => {
     try {
-        const response = await axios.put(`${API_URL}/updateStatus/${availabilityId}?newStatus=${newStatus}`, null, {
+        const response = await axios.put(`${API_BASE_URL}/availability/updateStatus/${availabilityId}?newStatus=${newStatus}`, null, {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json' // Asegurar el tipo de contenido
@@ -61,7 +61,7 @@ export const updateAvailabilityStatus = async (availabilityId, newStatus, token)
 
 export const getAvailabilitiesByUserId = async (userId, token) => {
     try {
-        const response = await axios.get(`${API_URL}/user/${userId}`, {
+        const response = await axios.get(`${API_BASE_URL}/availability/user/${userId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`,  // Asegúrate de incluir 'Bearer ' antes del token
             },
@@ -78,7 +78,7 @@ export const getAvailabilitiesByUserId = async (userId, token) => {
 
 export const getAvailabilityById = async (availabilityId, token) => {
     try {
-        const response = await axios.get(`${API_URL}/${availabilityId}`, {
+        const response = await axios.get(`${API_BASE_URL}/availability/${availabilityId}`, {
             headers: {
                 'Authorization': token,
             },
@@ -91,7 +91,7 @@ export const getAvailabilityById = async (availabilityId, token) => {
 
 export const deleteAvailability = async (availabilityId, token) => {
     try {
-        const response = await axios.delete(`${API_URL}/delete/${availabilityId}`, {
+        const response = await axios.delete(`${API_BASE_URL}/availability/delete/${availabilityId}`, {
             headers: {
                 'Authorization': token,
             },
@@ -104,7 +104,7 @@ export const deleteAvailability = async (availabilityId, token) => {
 
 export const getActiveAvailabilities = async (token) => {
     try {
-        const response = await axios.get(`${API_URL}/active`, {
+        const response = await axios.get(`${API_BASE_URL}/availability/active`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },

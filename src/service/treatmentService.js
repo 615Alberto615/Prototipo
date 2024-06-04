@@ -1,10 +1,10 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../service/config'; 
 
-const API_BASE_URL = 'http://localhost:8004/api/v1/treatment';
 
 export const fetchTreatmentsByUserId = async (userId, token) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/all/${userId}`, {
+        const response = await axios.get(`${API_BASE_URL}/treatment/all/${userId}`, {
             headers: { Authorization: token }
         });
         return response.data;
@@ -15,7 +15,7 @@ export const fetchTreatmentsByUserId = async (userId, token) => {
 };
 export const createTreatment = async (treatmentData, token) => {
     try {
-        const response = await axios.post(`${API_BASE_URL}/create`, treatmentData, {
+        const response = await axios.post(`${API_BASE_URL}/treatment/create`, treatmentData, {
             headers: { Authorization: token }
         });
         return response.data;

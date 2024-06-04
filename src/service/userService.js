@@ -1,10 +1,10 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../service/config'; 
 
-const API_BASE_URL = 'http://localhost:8004/api/v1/user';
 
 export const fetchPeopleByRole = async (roleId, token, page = 0, size = 3) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/peopleByRole/${roleId}?getAll=true`, {
+        const response = await axios.get(`${API_BASE_URL}/user/peopleByRole/${roleId}?getAll=true`, {
             headers: { Authorization: token },
             params: { page, size }
         });
@@ -17,7 +17,7 @@ export const fetchPeopleByRole = async (roleId, token, page = 0, size = 3) => {
 };
 export const fetchUserById = async (userId, token) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/find/${userId}`, {
+        const response = await axios.get(`${API_BASE_URL}/user/find/${userId}`, {
             headers: { Authorization: token },
         });
         console.log("Fetch user response:", response.data);
@@ -30,7 +30,7 @@ export const fetchUserById = async (userId, token) => {
 
 export const fetchPeopleById = async (userId, token) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/findPerson/${userId}`, {
+        const response = await axios.get(`${API_BASE_URL}/user/findPerson/${userId}`, {
             headers: { Authorization: token },
         });
         console.log("Fetch people response:", response.data);
@@ -43,7 +43,7 @@ export const fetchPeopleById = async (userId, token) => {
 
 export const fetchPatientsByRole = async (roleId, token) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/peopleByRole/${roleId}`, {
+        const response = await axios.get(`${API_BASE_URL}/user/peopleByRole/${roleId}`, {
             headers: { Authorization: token }
         });
         return response.data.data || []; // Asegurarnos de que siempre devuelve un array
@@ -55,7 +55,7 @@ export const fetchPatientsByRole = async (roleId, token) => {
 
 export const fetchPatientsByRole2 = async (roleId, token) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/peopleByRole/${roleId}`, {
+        const response = await axios.get(`${API_BASE_URL}/user/peopleByRole/${roleId}`, {
             headers: { Authorization: token }
         });
         return response.data; // Devolvemos directamente response.data
@@ -69,7 +69,7 @@ export const fetchPatientsByRole2 = async (roleId, token) => {
 // Mostrar todos los usuarios para el admin
 export const fetchAllUsers = async (token) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/all`, {
+        const response = await axios.get(`${API_BASE_URL}/user/all`, {
             headers: { Authorization: token },
         });
         console.log("Fetch all users response:", response.data);
@@ -83,7 +83,7 @@ export const fetchAllUsers = async (token) => {
 //Actualizar el usuario por el admin
 export const updateUser = async (userData, token) => {
     try {
-        const response = await axios.put(`${API_BASE_URL}/updateUser`, userData, {
+        const response = await axios.put(`${API_BASE_URL}/user/updateUser`, userData, {
             headers: { Authorization: token },
         });
         console.log("Update user response:", response.data);
@@ -97,7 +97,7 @@ export const updateUser = async (userData, token) => {
 
 export const changeUserRole = async (userId, newRoleId, token) => {
     try {
-        const response = await axios.put(`${API_BASE_URL}/changeRole/${userId}`, {
+        const response = await axios.put(`${API_BASE_URL}/user/changeRole/${userId}`, {
             rolId: newRoleId
         }, {
             headers: { Authorization: token },
@@ -113,7 +113,7 @@ export const changeUserRole = async (userId, newRoleId, token) => {
 // Función para cambiar el estado de un usuario
 export const changeUserStatus = async (userId, newStatus, token) => {
     try {
-        const response = await axios.put(`${API_BASE_URL}/changeStatus/${userId}`, {
+        const response = await axios.put(`${API_BASE_URL}/user/changeStatus/${userId}`, {
             status: newStatus
         }, {
             headers: { Authorization: token },
