@@ -2,6 +2,7 @@
 import { create } from 'zustand';
 import { loginUser, registerUser,resetPassword,forgotPassword } from '../service/authService';
 import axios from 'axios';
+import { API_BASE_URL } from '../service/config'; 
 const useAuthStore = create((set) => ({
   user: null,
   token: null,
@@ -60,7 +61,7 @@ const useAuthStore = create((set) => ({
     const userId = localStorage.getItem('userId');
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.get(`http://localhost:8004/api/v1/user/find/${userId}`, {
+      const response = await axios.get(`${API_BASE_URL}/user/find/${userId}`, {
         headers: {
           'Authorization': token
         }
