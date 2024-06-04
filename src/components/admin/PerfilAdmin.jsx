@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { API_BASE_URL } from '../../service/config'; 
 // import { FaRegAddressCard } from 'react-icons/fa';
 
 const PerfilAdmin = () => {
@@ -12,7 +12,7 @@ const PerfilAdmin = () => {
     useEffect(() => {
         // Fetch user data
         const fetchUserData = async () => {
-            const response = await fetch(`http://localhost:8004/api/v1/user/findPerson/${userId}`, {
+            const response = await fetch(`${API_BASE_URL}/user/findPerson/${userId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ const PerfilAdmin = () => {
             setUserData(data.data);
 
             // Fetch person data
-            const personResponse = await fetch(`http://localhost:8004/api/v1/user/findPerson/${data.data.peopleId}`, {
+            const personResponse = await fetch(`${API_BASE_URL}/user/findPerson/${data.data.peopleId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'

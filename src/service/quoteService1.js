@@ -18,7 +18,7 @@ export const getAllQuotes = async (token) => {
 
 export const getQuoteById = async (quotesId, token) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/quote/user/${quotesId}`, {
+        const response = await axios.get(`${API_BASE_URL}/quote/${quotesId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },
