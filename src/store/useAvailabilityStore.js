@@ -79,7 +79,7 @@ const useAvailabilityStore = create((set) => ({
         }
     },
 
-    deleteAvailability: async (availabilityId) => {
+    deleteAvailability: async (availabilityId) => {fetchAvailabilitiesByUserId
         try {
             const token = localStorage.getItem('token');
             await deleteAvailability(availabilityId, token);
