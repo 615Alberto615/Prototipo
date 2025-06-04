@@ -10,12 +10,12 @@ const Fotter = () => {
                 <div className="md:w-1/2 space-y-8">
                     <a href="/" className="text-2xl font-semibold flex items-center space-x-3 text-primary">
                         <img src={logo} alt="" className="w-10 inline-block items-center"/>
-                        <span className="text-white">UCB</span>
+                        <span className="text-white">NEBULA</span>
                     </a>
-                    <p className="md:w-1/2">Comprometidos con tu bienestar integral. En la UCB, apoyamos activamente la salud mental y emocional de nuestra comunidad universitaria.</p>
+                    <p className="md:w-1/2">Exploramos nuevas formas de leer. En NEBULA, convertimos las historias en experiencias visuales, sonoras e interactivas, llevando la lectura más allá del papel.</p>
                     
                 </div>
-                {/* nav fot */}
+                
                 <div className="md:w-1/2 flex flex-col md:flex-row flex-wrap justify-between gap-8 items-start">
                     <div className="space-y-4 mt-5">
                     </div>
@@ -38,18 +38,18 @@ const Fotter = () => {
             <hr/>
 
             <div className='flex flex-col sm:flex-row gap-8 sm:items-center justify-between my-8'>
-                <p className="text-center py-4">© 2024 UCB. All rights reserved.</p>
+                <p className="text-center py-4">© 2025 NEBULA. Todos los derechos reservados.</p>
                 <div className='flex items-center space-x-5'>
-                <a href="https://www.facebook.com/UCB.BOLIVIA/" target="_blank" rel="noopener noreferrer">
+                <a href="" target="_blank" rel="noopener noreferrer">
                     <img src={fb} alt="Facebook" className='w-8 cursor-pointer hover:-translate-y-4 transition-all duration-300'/>
                 </a>
-                <a href="https://www.instagram.com/ucb.lapaz/" target="_blank" rel="noopener noreferrer">
+                <a href="" target="_blank" rel="noopener noreferrer">
                     <img src={ig} alt="Insta" className='w-8 cursor-pointer hover:-translate-y-4 transition-all duration-300'/>
                 </a>
-                <a href="https://twitter.com/UCBLaPaz" target="_blank" rel="noopener noreferrer">
+                <a href="" target="_blank" rel="noopener noreferrer">
                     <img src={tw} alt="X" className='w-8 cursor-pointer hover:-translate-y-4 transition-all duration-300'/>
                 </a>
-                <a href="https://bo.linkedin.com/company/ucb-lapaz" target="_blank" rel="noopener noreferrer">
+                <a href="" target="_blank" rel="noopener noreferrer">
                     <img src={lk} alt="link" className='w-8 cursor-pointer hover:-translate-y-4 transition-all duration-300'/>
                 </a>
                 </div>

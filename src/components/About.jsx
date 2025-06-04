@@ -1,17 +1,9 @@
-import about from "../assets/about.jpg";
+import about from "../assets/about.png";
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
 
 const About = () => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Asegúrate de que el valor esté correctamente almacenado como string
-
-    const handleAppointmentClick = () => {
-        if (isLoggedIn) {
-            window.location.href = '/horarios';  // Cambia esta URL a donde debería ir después de hacer clic en "Agenda tu Cita"
-        } else {
-            window.location.href = '/login';
-        }
-    };
+    
 
     return (
         <div className="md:px-14 p-4 max-w-s mx-auto space-y-10" id="informacion">
@@ -32,12 +24,12 @@ const About = () => {
                     viewport={{once:false,amount:0.7}}
                     className="md:w-2/5"
                 >
-                    <h2 className="md:text-5xl font-bold text-primary mb-5 leading-normal">Tu Espacio,
-                    <span className="text-secondary"> tu Momento.</span></h2>
-                    <p className="text-tariary text-lg mb-7">Explora la libertad de elegir tu camino hacia el bienestar. Con solo unos clics, selecciona el especialista y el momento perfecto para ti en la UCB.</p>
-                    <button className="btnPrimary" onClick={handleAppointmentClick}>Agenda tu Cita</button>
+                    <h2 className="md:text-3xl font-bold text-primary mb-5 leading-normal">No es solo es lectura,
+                    <span className="text-secondary"> es experiencia.</span></h2>
+                    <p className="text-tariary text-lg mb-7">Descubre una nueva forma de leer con mundos que cobran vida. Elige tu libro, sumérgete en sonidos, ilustraciones y animaciones interactivas que transforman cada página en una experiencia única.</p>
+                    <button className="btnPrimary" >Descubre una Historia</button>
                 </motion.div>
-            </div>
+            </div> 
         </div>
     );
 };

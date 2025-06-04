@@ -1,14 +1,14 @@
     import { useState } from 'react';
     import { motion } from 'framer-motion'; 
     import { fadeIn } from '../variants';
-    import ov1 from '../assets/1.png';
-    import ov2 from '../assets/2.jpg';
-    import ov3 from '../assets/3.png';
+    import ov1 from '../assets/cr1.jpg';
+    import ov2 from '../assets/car3.png';
+    import ov3 from '../assets/cr4.png';
 
 
     const Información = () => {
         return (
-            <div className="my-24 md:px-14 px-4 max-w-screen-2xl mx-auto" id='servicios'>
+            <div className="my-24 md:px-14 px-4 max-w-screen-2xl mx-auto " id='servicios'>
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
                     <motion.div 
                     variants={fadeIn('right',0.2)}
@@ -17,8 +17,8 @@
                     
                     
                     className="lg:w-1/4">
-                        <h3 className="text-3xl text-primary font-bold lg:w-1/2 mb-3">Atención Personalizada</h3>
-                        <p className="text-base text-tartiary">La salud mental de nuestros estudiantes y personal es prioritaria. Ofrecemos un servicio ágil para agendar citas con profesionales calificados en psicología y terapia.</p>
+                        <h3 className="text-3xl text-primary font-bold lg:w-1/2 mb-3">¿Qué puedes hacer en NEBULA?</h3>
+                        <p className="text-base text-tartiary">Ya no solo se trata de leer… se trata de sentir. Nuestra plataforma transforma cada libro en una experiencia sensorial.</p>
                     </motion.div>
                     <motion.div 
                     variants={fadeIn('up',0.3)}
@@ -30,21 +30,21 @@
                         <FlipCard 
                             image={ov1} 
                             backImage={ov1}
-                            frontTitle="Agenda con Flexibilidad." 
-                            backText="Visualiza horarios disponibles y reserva citas con terapeutas certificados según tu conveniencia."
+                            frontTitle="Explora ilustraciones vivas" 
+                            backText="Cada página puede cobrar vida. Descubre ilustraciones que se activan en momentos clave de la historia. Visualiza escenas épicas, personajes y entornos mágicos mientras lees."
                         />
                         <FlipCard 
                             image={ov2} 
                             backImage={ov2} 
-                            frontTitle="Gestión de Citas" 
-                            backText="Consulta y maneja tus citas programadas fácilmente, con opciones para cancelar o reprogramar según necesites."
+                            frontTitle="Escucha el entorno del libro" 
+                            backText="Activa sonidos ambientales, efectos y música que te transportan al escenario de la historia. Desde el desierto de Arrakis hasta un bosque encantado, siente que estás ahí."
                             className="md:mt-16"
                         />
                         <FlipCard 
                             image={ov3} 
                             backImage={ov3}
-                            frontTitle="Información y Seguimiento." 
-                            backText="Accede a detalles de cada sesión, observaciones del terapeuta y recomendaciones para tu proceso terapéutico."
+                            frontTitle="Tu Biblioteca Inmersiva" 
+                            backText="Guarda tus libros favoritos, marca tus escenas interactivas preferidas y continúa donde dejaste. Personaliza tu experiencia y crea tu propio universo de lectura."
                         />
                     </div> 
                 </motion.div>

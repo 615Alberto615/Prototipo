@@ -2,7 +2,7 @@
   "name": "general",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://Jhosep2022.github.io/Frontend-taller-de-info",
+  "homepage": "https://615Alberto615.github.io/Prototipo",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,10 +15,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "axios": "^1.6.8",
+    "@ramonak/react-progress-bar": "^5.4.0",
+    "axios": "^1.6.10",
     "chart.js": "^4.4.2",
     "date-fns": "^3.6.0",
     "framer-motion": "^11.0.20",
+    "general": "file:",
     "jwt-decode": "^4.0.0",
     "moment": "^2.30.1",
     "react": "^18.2.0",
@@ -28,6 +30,7 @@
     "react-router-dom": "^6.22.3",
     "react-scroll": "^1.9.0",
     "react-spinners": "^0.13.8",
+    "use-sound": "^5.0.0",
     "uvcanvas": "^0.2.1",
     "zustand": "^4.5.2"
   },
@@ -40,7 +43,7 @@
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.36",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.6"
