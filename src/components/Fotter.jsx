@@ -12,7 +12,9 @@ const Fotter = () => {
                         <img src={logo} alt="" className="w-10 inline-block items-center"/>
                         <span className="text-white">NEBULA</span>
                     </a>
-                    <p className="md:w-1/2">Exploramos nuevas formas de leer. En NEBULA, convertimos las historias en experiencias visuales, sonoras e interactivas, llevando la lectura más allá del papel.</p>
+                    <p className="md:w-1/2">
+                     NÉBULA – Narrativa Enriquecida Basada en Universos Lúdicos y Asombrosos
+                    Exploramos nuevas formas de leer. En NEBULA, convertimos las historias en experiencias visuales, sonoras e interactivas, llevando la lectura más allá del papel.</p>
                     
                 </div>
                 

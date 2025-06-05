@@ -24,7 +24,7 @@ const About = () => {
                     viewport={{once:false,amount:0.7}}
                     className="md:w-2/5"
                 >
-                    <h2 className="md:text-3xl font-bold text-primary mb-5 leading-normal">No es solo es lectura,
+                    <h2 className="md:text-3xl font-bold text-primary mb-5 leading-normal">No solo es lectura,
                     <span className="text-secondary"> es experiencia.</span></h2>
                     <p className="text-tariary text-lg mb-7">Descubre una nueva forma de leer con mundos que cobran vida. Elige tu libro, sumérgete en sonidos, ilustraciones y animaciones interactivas que transforman cada página en una experiencia única.</p>
                     <button className="btnPrimary" >Descubre una Historia</button>
